@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>arc drow</title>
+<meta charset="UTF-8">
+<style type="text/css">
+#canvas1{position:absolute;
+background:black;
+width:100%;
+height:100%;
+top:0;
+left:0;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas1"></canvas>
+
+<script type="text/javascript">
+
+const canvas =document.getElementById("canvas1");
+const ctx=canvas.getContext("2d");
+
+window.addEventListener('resize', function(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+drowArc();
+});
+
+const mouse={
+x:null,
+y:null
+}
+
+canvas.addEventListener('click', function(event){
+mouse.x=event.x;
+mouse.y=event.y;
+drowArc();
+})
+
+
+function drowArc(){
+ctx.fillStyle='blue';
+ctx.lineWidth=15;
+ctx.strokeStyle='red';
+ctx.beginPath();
+ctx.arc(event.x,event.y,50,0,2*Math.PI);
+ctx.fill();
+ctx.stroke();
+}
+//drowArc(); //dile ditew paro difolt vabe 1 ta takhbe!
+</script>
+</body>
+</html>
