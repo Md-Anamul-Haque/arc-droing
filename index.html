@@ -32,12 +32,17 @@ const mouse={
 x:null,
 y:null
 }
+canvas.addEventListener('mouseMove', function(event){
+mouse.x=event.x;
+mouse.y=event.y;
+drowArc();
+});
 
 canvas.addEventListener('click', function(event){
 mouse.x=event.x;
 mouse.y=event.y;
 drowArc();
-})
+});
 
 
 function drowArc(){
